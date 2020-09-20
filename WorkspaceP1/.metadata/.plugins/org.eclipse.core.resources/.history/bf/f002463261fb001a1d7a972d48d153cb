@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Idade</title>
+</head>
+<body>
+	Tarefa:<br />
+	<form action="adicionaTarefa.jsp">
+		Idade= <input type="text" name="tarefa"/>
+		Entrega= <input type="text" name="entrega"/>
+		<input type="submit" />
+	</form>
+</body>
+</html>

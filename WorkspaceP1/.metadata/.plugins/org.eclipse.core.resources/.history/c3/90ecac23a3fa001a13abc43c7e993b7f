@@ -1,0 +1,13 @@
+package br.edu.insper;
+import java.util.Calendar;
+
+
+// Tipico java bin - recebe info do banco de dados
+public class Tarefa {
+		
+	private Integer id;
+	private String nome;
+	private Calendar entrega;
+	private Double descricao;
+	
+}

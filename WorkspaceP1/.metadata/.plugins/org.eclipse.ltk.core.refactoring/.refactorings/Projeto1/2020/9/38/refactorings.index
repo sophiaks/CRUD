@@ -1,0 +1,5 @@
+1600538917375	Encapsulate field 'id'
+1600538923311	Encapsulate field 'nome'
+1600538927758	Encapsulate field 'entrega'
+1600538932266	Encapsulate field 'descricao'
+1600542368997	Move 'lista.jsp' to 'WebContent'

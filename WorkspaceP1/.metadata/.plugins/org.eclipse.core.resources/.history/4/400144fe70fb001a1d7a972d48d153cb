@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tarefa</title>
+</head>
+<body>
+	<form action="/WEB-INF/views/lista.jsp">
+		Tarefa: <input type="text" name="tarefa"/>
+		Entrega: <input type="text" name="entrega"/>
+		<input type="submit" />
+	</form>
+</body>
+</html>
