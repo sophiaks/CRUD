@@ -2,18 +2,18 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lista de Tarefas</title>
+<link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
 </head>
 <body>
-	<jsp:useBean id="dao" class="br.edu.insper.DAO"/>
-	<a href="<%=request.getContextPath()%>/adiciona"
-					class="btn btn-success">Adicionar Tarefa</a>
-	<table border='1'>
+	<jsp:useBean id="dao" class="br.edu.insper.model.DAO"/>
+	<table border='1' class="table table-dark">
 				<thead>
 					<tr>
 						<th>Tarefa</th>
@@ -30,7 +30,7 @@
 							
 							<td><form action="remove" method="post">
 							<input type="hidden" name='id' value='${tarefa.id}'>
-							<input type="submit" value="remover">
+							<input type="submit" value="Remover" class="btn btn-primary">
 							</form>
 							</td>
 							
@@ -39,12 +39,15 @@
 							<input type="hidden" name='nome' value='${tarefa.nome}'>
 							<input type="hidden" name='entrega' value='${tarefa.entrega}'>
 							<input type="hidden" name='descricao' value='${tarefa.descricao}'>
-							<input type="submit" value="Editar">
+							<input type="submit" value="Editar" class="btn btn-secondary">
 							</form>
 							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 </table>
+<br />
+<a href="<%=request.getContextPath()%>/adiciona"
+					class="btn btn-success">Adicionar Tarefa</a>
 </body>
 </html>

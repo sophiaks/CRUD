@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.*,br.edu.insper.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Editar Tarefa</title>
+</head>
+<body>
+	<jsp:useBean id="dao" class="br.edu.insper.DAO"/>
+	<form action="atualiza" method="post">
+		Tarefa: <input type='text' name='nome' value='${param.nome}'><br>
+		Data de Entrega: <input type='text' name='entrega' value='${param.entrega}'><br>
+		Descrição: <input type='text' name='descricao' value='${param.descricao}'><br>
+		<input type='hidden' name='id' value='${param.id}'>
+		<input type='submit' value='atualizar'>
+	</form>
+</body>
+</html>
