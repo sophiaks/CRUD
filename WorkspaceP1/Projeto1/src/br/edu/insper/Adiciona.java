@@ -1,0 +1,62 @@
+package br.edu.insper;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/adiciona")
+public class Adiciona extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Adiciona() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			DAO dao = new DAO();
+			List<Tarefa> tarefas = dao.getLista();
+			request.setAttribute("tarefas", tarefas);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/Views/adiciona.jsp");
+			dispatcher.forward(request, response);
+			dao.close();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			DAO dao = new DAO();
+			Tarefa tarefa = new Tarefa();
+			tarefa.setNome(request.getParameter("nome"));
+			tarefa.setEntrega(request.getParameter("entrega"));
+			tarefa.setDescricao(request.getParameter("descricao"));
+			
+			dao.adiciona(tarefa);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Lista");
+			dispatcher.forward(request, response);
+			
+			dao.close();
+	}
+	 catch (ClassNotFoundException | SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	 }
+	}
+}
+
+

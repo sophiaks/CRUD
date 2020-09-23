@@ -2,7 +2,7 @@
 
     pageEncoding="UTF-8"%>
 
-<%@ page import="java.util.*,br.edu.insper.*" %>
+<%@ page import="java.util.*,br.edu.teste.*" %>
 
 <!DOCTYPE html>
 
@@ -17,7 +17,8 @@
 </head>
 
 <body>
-<%br.edu.insper.DAO dao = new br.edu.insper.DAO();
+<%
+	br.edu.teste.DAO dao = new br.edu.teste.DAO();
 List<Pessoa> pessoas = dao.getLista();
 %>
 <table border='1'>

@@ -1,12 +1,11 @@
 package br.edu.insper;
-import java.sql.Date;
 
 // Tipico java bin - recebe info do banco de dados
 public class Tarefa {
 		
 	private Integer id;
 	private String nome;
-	private Date entrega;
+	private String entrega;
 	private String descricao;
 	public Integer getId() {
 		return id;
@@ -20,10 +19,10 @@ public class Tarefa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getEntrega() {
+	public String getEntrega() {
 		return entrega;
 	}
-	public void setEntrega(Date date) {
+	public void setEntrega(String date) {
 		this.entrega = date;
 	}
 	public String getDescricao() {

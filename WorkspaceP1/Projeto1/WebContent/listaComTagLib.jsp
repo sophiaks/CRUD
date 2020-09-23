@@ -11,11 +11,9 @@
 <body>
 	 <div id="myDIV" class="header">
   		<h2>Minhas Tarefas</h2>
-  		<input type="text" id="myInput" placeholder="Title...">
-  		<span onclick="newElement()" class="addBtn">Adicionar</span>
 	</div>
-	<ul id="myUL">
-	  <c:forEach var="tarefa" items="{dao.lista}" varStatus="id">
+	<ul>
+	  <c:forEach var="tarefa" items="${dao.lista}" varStatus="id">
 	  	<li>${tarefa.tarefa} + para + ${tarefa.data}</li>
 	  </c:forEach>
 	</ul> 

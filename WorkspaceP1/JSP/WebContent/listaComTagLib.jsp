@@ -26,7 +26,7 @@
 	<td>${pessoa.nome}</td>
 	<td>
 	<fmt:formatDate     
-	value="${pessoa.nascimento.time}"                
+	value="${pessoa.nascimento}"              
 	pattern="dd/MM/yyyy"/>
 	</td>
 	<td>${pessoa.altura}</td>

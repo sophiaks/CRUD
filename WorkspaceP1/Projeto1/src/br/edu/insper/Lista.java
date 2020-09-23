@@ -1,5 +1,4 @@
 package br.edu.insper;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -34,17 +33,15 @@ public class Lista extends HttpServlet {
 			List<Tarefa> tarefas;
 		
 			tarefas = dao.getLista();
-			// atributo na requisicao
 			request.setAttribute("tarefas", tarefas);
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("lista.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/Views/lista.jsp");
 			dispatcher.forward(request, response);
+			
 			dao.close();
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

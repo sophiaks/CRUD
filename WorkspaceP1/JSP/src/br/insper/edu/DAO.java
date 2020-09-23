@@ -11,12 +11,9 @@ import java.util.List;
 
 
 public class DAO {
-	// Data Access Object
 	private Connection connection = null;
 	
 	public DAO () throws ClassNotFoundException, SQLException {
-		// Mudar SEMPRE - Vai ter info de conexão de outra pessoa
-		// Priorizar java.sql
 		Class.forName("com.mysql.jdbc.Driver");
 		connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/meus_dados?serverTimezone=UTC", "root", "^^b^@JVg^x!6");
 	}

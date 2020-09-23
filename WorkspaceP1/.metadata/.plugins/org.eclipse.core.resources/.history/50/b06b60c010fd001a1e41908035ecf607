@@ -1,0 +1,74 @@
+package br.edu.insper;
+import java.io.IOException;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+/**
+ * Servlet implementation class Cria
+ */
+@WebServlet("/adiciona")
+public class adiciona extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public adiciona() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			DAO dao = new DAO();
+			List<Tarefa> tarefas = dao.getLista();
+			request.setAttribute("tarefas", tarefas);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/Views/adiciona.jsp");
+			dispatcher.forward(request, response);
+			dao.close();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Envia pro DAO
+		
+		try {
+		DAO dao = new DAO();
+		Tarefa tarefa = new Tarefa();
+		tarefa.setId(Integer.valueOf("id"));
+		tarefa.setNome(request.getParameter("nome"));
+		tarefa.setEntrega(Date.valueOf("entrega"));
+		tarefa.setDescricao(request.getParameter("descricao"));
+		
+		dao.adiciona(tarefa);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Lista");
+		dispatcher.forward(request, response);
+		
+		dao.close();
+	}
+	 catch (ClassNotFoundException | SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	 }
+	}
+}
+
+

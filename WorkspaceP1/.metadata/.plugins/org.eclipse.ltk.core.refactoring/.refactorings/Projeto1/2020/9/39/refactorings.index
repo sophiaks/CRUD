@@ -2,3 +2,11 @@
 1600621460565	Delete element
 1600627733323	Move 'criaTarefa.jsp' to 'WebContent'
 1600627737610	Move 'lista.jsp' to 'WebContent'
+1600727148011	Move 'listRamesh.jsp' to 'WebContent'
+1600733533443	Move 'criaTarefa.jsp' to 'Views'
+1600735353389	Move 'lista.jsp' to 'Views'
+1600788683185	Rename type 'Cria'
+1600788695987	Rename type 'adidiona'
+1600805898144	Rename type 'adiciona'
+1600805909958	Rename type 'atualiza'
+1600805923042	Rename type 'remove'
