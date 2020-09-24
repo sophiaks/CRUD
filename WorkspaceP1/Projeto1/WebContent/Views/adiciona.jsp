@@ -11,13 +11,16 @@
 <meta charset="ISO-8859-1">
 <title>Tarefa</title>
 <link href="<c:url value="/bootstrap/css/bootstrap.css"/>" rel="stylesheet">
+<link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
+
 </head>
 
 <body>
+<section class="bg-custom">
 	<jsp:useBean id="dao" class="br.edu.insper.model.DAO"/>
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark"
-		style="background-color: orange">
+		style="background-color: indigo">
 		<br>
 		<a href="<%=request.getContextPath()%>/Lista" class="btn btn-secondary">Lista de Tarefas</a>
 		
@@ -51,6 +54,6 @@
 	<br />
 	
 
-	
+	</section>
 </body>
 </html>

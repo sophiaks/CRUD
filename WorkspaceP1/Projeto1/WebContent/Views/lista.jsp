@@ -14,18 +14,19 @@
 </head>
 
 <body>
-	<section class="bg-custom">
+	<div class="bg-custom">
 	<jsp:useBean id="dao" class="br.edu.insper.model.DAO"/>
-	<div class="navbar navbar-expand-md navbar-dark"> 
-    	<div class="nav-item"> 
-          <input class="form-control" type="text" name="" placeholder="Pesquisar">
-    	</div>
-    <div>
-    <form action="procura" method="post">
-    <input name="pesquisa" type="submit" class="btn btn-success" value="OK">
-    </form>
-   	</div>
-   	</div>
+    
+ 
+   	 <div class="form-inline">
+	    <form action="procura" method="post">
+	    	<div>
+				<input type="text" name="pesquisa" class="form-control" placeholder="Pesquisar">
+				<input type="submit" value="OK" class="btn btn-success" >
+				
+			</div>
+	    </form>
+	   	</div>
 	<table border='1' class="table table-dark">
 	
 				<thead>
@@ -63,6 +64,7 @@
 <br />
 <a href="<%=request.getContextPath()%>/adiciona"
 					class="btn btn-success">Adicionar Tarefa</a>
-</section>
+</div>
 </body>
+
 </html>
