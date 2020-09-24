@@ -70,4 +70,25 @@ public class DAO {
 		stmt.execute();
 		stmt.close();
 	}
+	
+	public List<Tarefa> procura(String string) throws SQLException {
+		PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Tarefa WHERE tarefa='"+string+"' or data='"+string+"' or descricao='"+string+"'");
+		ResultSet rs = stmt.executeQuery();
+		List<Tarefa> resultados = new ArrayList<Tarefa>();
+		while (rs.next()) {
+			Tarefa tarefa = new Tarefa();
+			
+			tarefa.setId(rs.getInt("id"));
+			tarefa.setNome(rs.getString("tarefa"));
+			tarefa.setEntrega(rs.getString("data"));
+			tarefa.setDescricao(rs.getString("descricao"));
+			resultados.add(tarefa);
+			}
+		
+		rs.close();
+		stmt.close();
+		
+		return resultados;
+		
+	}
 }

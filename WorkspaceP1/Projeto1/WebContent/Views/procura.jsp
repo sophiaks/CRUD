@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista de Tarefas</title>
+<link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
+<link href="<c:url value="/bootstrap/css/bootstrap.css"/>" rel="stylesheet">
+</head>
+
+<body>
+	<section class="bg-custom">
+	<jsp:useBean id="dao" class="br.edu.insper.model.DAO"/>
+	<div class="navbar navbar-expand-md navbar-dark"> 
+ 
+    <div>
+    <form action="procura" method="post">
+    	<div class="form-group">
+			<label for="descricao">Pesquisa</label>
+			<input type="text" name="pesquisa" class="form-control" placeholder="Pesquisar">
+		</div>
+    	<input type="submit" value="OK" class="btn btn-success" >
+    </form>
+   	</div>
+   	</div>
+	<table border='1' class="table table-dark">
+	
+				<thead>
+					<tr>
+						<th>Tarefa</th>
+						<th>Data de Entrega</th>
+						<th>Descrição</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="resultado" items="${resultados}">
+						<tr>
+							<td>${resultado.nome}</td>
+							<td>${resultado.entrega}</td>
+							<td>${resultado.descricao}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+</table>
+<br />
+
+</section>
+</body>
+</html>
