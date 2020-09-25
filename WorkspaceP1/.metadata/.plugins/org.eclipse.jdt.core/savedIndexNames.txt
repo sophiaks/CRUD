@@ -52,7 +52,6 @@ INDEX VERSION 1.131+D:\Users\Owner\GitHub\TechWeb_Projeto1\WorkspaceP1\.metadata
 874798761.index
 1132740132.index
 3274236323.index
-348198442.index
 2701144764.index
 2715310064.index
 380079852.index
